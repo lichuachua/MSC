@@ -18,14 +18,14 @@
   - generate.py - Source file for generate images
   - generate.sh - Footstep file for generate images
 ## Running steps
-### 准备
-1. 下载安装diffusers包
-2. 运行'cd diffusers'
-3. 运行'pip install .'
-4. 运行'cd examples/dreambooth'
-5. 运行'pip install -r requirements.txt'
-### 训练
-6. 回到当前文件夹，运行'qsub train.sh'，等待当前任务完成
-### 生成
-7. 任务完成，在当前文件夹运行'qsub generate.sh'
+### Prepare
+1. Download and install the diffusers package
+2. Run 'cd diffusers'
+3. Run 'pip install .'
+4. Run 'cd examples/dreambooth'
+5. Run 'pip install -r requirements.txt'
+### Training
+6. Return to the current folder, run 'qsub train. sh', and wait for the current task to complete
+### Generate
+7. Task completed, run 'qsub generate. sh' in the current folder
 
