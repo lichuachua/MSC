@@ -19,13 +19,13 @@
   - generate.sh - Footstep file for generate images
 ## Running steps
 ### Prepare
-1. Download and install the diffusers package
+1. Download and install the diffusers package - run 'git clone https://github.com/huggingface/diffusers'
 2. Run 'cd diffusers'
 3. Run 'pip install .'
 4. Run 'cd examples/dreambooth'
 5. Run 'pip install -r requirements.txt'
 ### Training
-6. Return to the current folder, run 'qsub train. sh', and wait for the current task to complete
+6. Return to the current folder, run 'qsub train.sh', and wait for the current task to complete
 ### Generate
-7. Task completed, run 'qsub generate. sh' in the current folder
+7. Task completed, run 'qsub generate.sh' in the current folder
 

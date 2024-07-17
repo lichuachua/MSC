@@ -19,7 +19,7 @@ module load cuda
 nvidia-smi
 
 
-python train_dreambooth.py \
+python ./diffusers/examples/dreambooth/train_dreambooth.py \
   --pretrained_model_name_or_path="runwayml/stable-diffusion-v1-5"  \
   --instance_data_dir="./dog-examples" \
   --output_dir="./fine-tune-dreambooth" \
