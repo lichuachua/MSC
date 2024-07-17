@@ -1,4 +1,4 @@
-# blog-note
+# 1.blog-note
 ## Introduce:
   - The basic usage of Stable Diffusion for generating some instance images.
 ## structure
