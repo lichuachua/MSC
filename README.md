@@ -26,6 +26,10 @@
 5. Run 'pip install -r requirements.txt'
 ### Training
 6. Return to the current folder, run 'qsub train.sh', and wait for the current task to complete
+After the training is completed, you will see the trained model file in the 'fine tune dreamboot' folder, as shown below：
+<img width="1014" alt="image" src="https://github.com/user-attachments/assets/2b6a8d2f-4d1d-42fd-a37b-c1d05d05189e">
+
+
 ### Generate
 7. Task completed, run 'qsub generate.sh' in the current folder
 
