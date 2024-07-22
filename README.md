@@ -32,7 +32,7 @@
 
 ### Prepare
 
-1. Download and install the diffusers package - run 'git clone https://github.com/huggingface/diffusers'
+1. Enter the dreambooth folder, Download and install the diffusers package - run 'git clone https://github.com/huggingface/diffusers'
 2. Run 'cd diffusers'
 3. Run 'pip install .'
 4. Run 'cd examples/dreambooth'
@@ -40,7 +40,7 @@
 
 ### Training
 
-6. Return to the current folder, run 'qsub train.sh', and wait for the current task to complete
+6. Return to the current folder(dreambooth folder), run 'qsub train.sh', and wait for the current task to complete
    After the training is completed, you will see the trained model file in the 'fine-tune-dreambooth' folder, as shown
    below：
    <img width="1014" alt="image" src="https://github.com/user-attachments/assets/2b6a8d2f-4d1d-42fd-a37b-c1d05d05189e">
@@ -68,7 +68,7 @@
 
 ### Prepare
 
-1. Download and install the diffusers package - run 'git clone https://github.com/huggingface/diffusers'
+1. Enter the lora folder, Download and install the diffusers package - run 'git clone https://github.com/huggingface/diffusers'
 2. Run 'cd diffusers'
 3. Run 'pip install .'
 4. Run 'cd examples/text_to_image'
@@ -76,7 +76,7 @@
 
 ### Training
 
-6. Return to the current folder, run 'qsub train.sh', and wait for the current task to complete
+6. Return to the current folder(lora/pokemon folder), run 'qsub train.sh', and wait for the current task to complete
    After the training is completed, you will see the trained model file in the 'fine-tune-lora' folder, as shown
    below：
 

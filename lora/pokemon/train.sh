@@ -19,7 +19,7 @@ module load cuda
 nvidia-smi
 
 
-python ./diffusers/examples/text_to_image/train_text_to_image_lora.py \
+python ../diffusers/examples/text_to_image/train_text_to_image_lora.py \
   --pretrained_model_name_or_path="runwayml/stable-diffusion-v1-5"  \
   --dataset_name="./pokemon_dataset" \
    --dataloader_num_workers=8 \
