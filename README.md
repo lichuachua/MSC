@@ -79,6 +79,8 @@
 6. Return to the current folder(lora/pokemon folder), run 'qsub train.sh', and wait for the current task to complete
    After the training is completed, you will see the trained model file in the 'fine-tune-lora' folder, as shown
    below：
+   ![img](https://github.com/user-attachments/assets/c9c67f19-70ba-41d5-ab10-10644948b280)
+
 
 ### Generate
 
