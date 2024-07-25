@@ -1,7 +1,7 @@
-from diffusers import DiffusionPipeline
+from diffusers import AutoPipelineForText2Image
 import torch
 
-pipeline = DiffusionPipeline.from_pretrained("./fine-tune-lora", torch_dtype=torch.float16, use_safetensors=True).to("cuda")
-image = pipeline("A pokemon with blue eyes", num_inference_steps=50, guidance_scale=7.5).images[0]
+pipeline = AutoPipelineForText2Image.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16).to("cuda")
+pipeline.load_lora_weights("./fine-tune-lora", weight_name="pytorch_lora_weights.safetensors")
+image = pipeline("A pokemon with blue eyes").images[0]
 image.save("pokemon.png")
-
