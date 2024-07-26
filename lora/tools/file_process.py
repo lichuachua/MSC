@@ -1,10 +1,12 @@
 import os
 import json
+import csv
 
 
-def generate_jsonl_from_folder(folder_path, output_file):
-    # Create an empty list to store JSON objects
+def generate_files_from_folder(folder_path, output_jsonl_file, output_csv_file):
+    # Create an empty list to store JSON objects and CSV rows
     jsonl_data = []
+    csv_rows = []
 
     # Traverse files in the folder
     for file_name in os.listdir(folder_path):
@@ -27,14 +29,29 @@ def generate_jsonl_from_folder(folder_path, output_file):
                 }
                 jsonl_data.append(json_obj)
 
-    # Write data to jsonl file
-    with open(output_file, 'w', encoding='utf-8') as f:
+                # Construct CSV row
+                csv_row = {
+                    "file_name": file_name,
+                    "text": text
+                }
+                csv_rows.append(csv_row)
+
+    # Write data to JSONL file
+    with open(output_jsonl_file, 'w', encoding='utf-8') as f:
         for entry in jsonl_data:
             f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+
+    # Write data to CSV file
+    with open(output_csv_file, 'w', encoding='utf-8', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=["file_name", "text"])
+        writer.writeheader()
+        writer.writerows(csv_rows)
 
 
 # Example usage
 folder_path = '../cartoon/cartoon_dataset'  # Folder containing images and description files
-output_file = folder_path + '/metadata.jsonl'  # Generated jsonl file name
-print(output_file)
-generate_jsonl_from_folder(folder_path, output_file)
+output_jsonl_file = os.path.join(folder_path, 'metadata.jsonl')  # Generated JSONL file name
+output_csv_file = os.path.join(folder_path, 'metadata.csv')  # Generated CSV file name
+print(f"JSONL output file: {output_jsonl_file}")
+print(f"CSV output file: {output_csv_file}")
+generate_files_from_folder(folder_path, output_jsonl_file, output_csv_file)
