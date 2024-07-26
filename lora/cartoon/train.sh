@@ -7,7 +7,7 @@
 #$ -l h_rt=40:00:00
 
 #Request some memory per core
-#$ -l h_vmem=1G
+#$ -l h_vmem=2G
 
 #Get email at start and end of the job
 #$ -m be
@@ -22,19 +22,19 @@ nvidia-smi
 python ../diffusers/examples/text_to_image/train_text_to_image_lora.py \
   --pretrained_model_name_or_path="runwayml/stable-diffusion-v1-5"  \
   --dataset_name="./cartoon_dataset" \
-   --dataloader_num_workers=8 \
+  --dataloader_num_workers=8 \
   --resolution=512 \
   --center_crop \
   --random_flip \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
-  --max_train_steps=15000 \
+  --max_train_steps=1500 \
   --learning_rate=1e-04 \
   --max_grad_norm=1 \
   --lr_scheduler="cosine" \
   --lr_warmup_steps=0 \
   --output_dir="./fine-tune-lora" \
-  --hub_model_id="pokemon-lora" \
+  --hub_model_id="cartoon-lora" \
   --checkpointing_steps=500 \
-  --validation_prompt="A pokemon with blue eyes." \
+  --validation_prompt="a girl in a red dress standing on a wooden fence" \
   --seed=1337
