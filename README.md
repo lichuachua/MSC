@@ -14,7 +14,7 @@
 
 - Run 'qsub blog-note.sh' in the current directory
 
-# 2.dreamboothdreambooth
+# 2.dreambooth
 
 ## Introduce:
 
@@ -49,7 +49,7 @@
 
 7. Task completed, run 'qsub generate.sh' in the current folder
 
-# 2.dreamboothdreambooth
+# 3.lora
 
 ## Introduce:
 
@@ -85,3 +85,10 @@
 ### Generate
 
 7. Task completed, run 'qsub generate.sh' in the current folder
+
+
+# Explanation
+## Image marking tool
+- waifu-diffusion-v1-4 https://huggingface.co/hakurei/waifu-diffusion-v1-4
+- DeepDanbooru https://huggingface.co/skytnt/deepdanbooru_onnx
+- BLIP
