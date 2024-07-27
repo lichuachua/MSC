@@ -12,7 +12,7 @@
 #Get email at start and end of the job
 #$ -m be
 
-#$ -l coproc_v100=3
+#$ -l coproc_v100=1
 
 #Now run the job
 module load cuda
