@@ -14,7 +14,7 @@ base_dir = "./fine-tune-lora"
 output_base_dir = "./output_file"
 
 
-end_output_dir = "./output_file/output_file_checkpoint_end"
+end_output_dir = "./output_file/output_file_checkpoint-10000000"
 
 os.makedirs(end_output_dir, exist_ok=True)
 
@@ -47,4 +47,3 @@ for checkpoint in checkpoints:
         image.save(os.path.join(output_dir, f"cartoon_{i + 1}.png"))
 
 print("All images generated and saved.")
-
