@@ -13,6 +13,20 @@ prompts = [
 base_dir = "./fine-tune-lora"
 output_base_dir = "./output_file"
 
+
+end_output_dir = "./output_file/output_file_checkpoint_end"
+
+os.makedirs(end_output_dir, exist_ok=True)
+
+pipeline = AutoPipelineForText2Image.from_pretrained("runwayml/stable-diffusion-v1-5",
+                                                     torch_dtype=torch.float16).to("cuda")
+pipeline.load_lora_weights(base_dir, weight_name="pytorch_lora_weights.safetensors")
+
+for i, prompt in enumerate(prompts):
+    print(f"Generating image for prompt {i + 1}")
+    image = pipeline(prompt).images[0]
+    image.save(os.path.join(end_output_dir, f"cartoon_{i + 1}.png"))
+
 checkpoints = [f for f in os.listdir(base_dir)
                if os.path.isdir(os.path.join(base_dir, f)) and f.startswith('checkpoint')]
 
