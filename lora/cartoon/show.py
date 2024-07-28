@@ -101,8 +101,8 @@ def main(input_folder, output_file):
 
 
 # 使用示例
-input_folder = '/Users/lichuachua/Downloads/output_file'
-output_file = '/Users/lichuachua/Downloads/final_combined_image_with_labels.png'
+input_folder = './output_file'
+output_file = 'final_combined_image_with_labels.png'
 main(input_folder, output_file)
 
 # 可选：显示结果
