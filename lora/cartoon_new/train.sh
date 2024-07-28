@@ -28,13 +28,13 @@ python ../diffusers/examples/text_to_image/train_text_to_image_lora.py \
   --random_flip \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
-  --max_train_steps=1500 \
+  --max_train_steps=15000 \
   --learning_rate=1e-04 \
   --max_grad_norm=1 \
   --lr_scheduler="cosine" \
   --lr_warmup_steps=0 \
   --output_dir="./fine-tune-lora" \
-  --hub_model_id="cartoon-lora" \
+  --hub_model_id="cartoon-new-lora" \
   --checkpointing_steps=500 \
-  --validation_prompt="a girl in a red dress standing on a wooden fence" \
+  --validation_prompt="1girl, bangs, blush, crescent, crescent hair ornament, future parade (love live!), grey hair, hair ornament, hat, looking at viewer, love live!, love live! nijigasaki high school idol club, nakasu kasumi, pink eyes, short hair, sidelocks, simple background, smile, star (symbol), star hair ornament, tomo wakui, upper body, white background" \
   --seed=1337
