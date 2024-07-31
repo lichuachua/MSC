@@ -35,6 +35,6 @@ python ../diffusers/examples/text_to_image/train_text_to_image_lora.py \
   --lr_warmup_steps=0 \
   --output_dir="./fine-tune-lora" \
   --hub_model_id="cartoon-new-lora" \
-  --checkpointing_steps=500 \
-  --validation_prompt="1girl, bangs, blush, crescent, crescent hair ornament, future parade (love live!), grey hair, hair ornament, hat, looking at viewer, love live!, love live! nijigasaki high school idol club, nakasu kasumi, pink eyes, short hair, sidelocks, simple background, smile, star (symbol), star hair ornament, tomo wakui, upper body, white background" \
+  --checkpointing_steps=200 \
+  --validation_prompt="anime screencap, masterpiece, best quality, 1girl, aqua eyes, baseball cap, blonde hair, closed mouth, earrings, green background, hat, hoop earrings, jewelry, looking at viewer, shirt, short hair, simple background, solo, upper body, yellow shirt" \
   --seed=1337
