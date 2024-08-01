@@ -18,21 +18,23 @@
 module load cuda
 nvidia-smi
 
-python ../diffusers/examples/text_to_image/train_text_to_image_sdxl.py \
-  --pretrained_model_name_or_path="stabilityai/stable-diffusion-xl-base-1.0"  \
-  --dataset_name="./cartoon_dataset" \
-  --pretrained_vae_model_name_or_path="madebyollin/sdxl-vae-fp16-fix" \
-  --enable_xformers_memory_efficient_attention \
-  --resolution=512 --center_crop --random_flip \
-  --proportion_empty_prompts=0.2 \
-  --train_batch_size=1 \
-  --gradient_accumulation_steps=4 --gradient_checkpointing \
-  --max_train_steps=15000 \
-  --use_8bit_adam \
-  --learning_rate=1e-06 --lr_scheduler="constant" --lr_warmup_steps=0 \
-  --mixed_precision="fp16" \
-  --validation_prompt="1girl, bangs, blush, crescent, crescent hair ornament, future parade (love live!), grey hair, hair ornament, hat, looking at viewer, love live!, love live! nijigasaki high school idol club, nakasu kasumi, pink eyes, short hair, sidelocks, simple background, smile, star (symbol), star hair ornament, tomo wakui, upper body, white background" --validation_epochs 5 \
-  --checkpointing_steps=1000 \
-  --output_dir="./fine-tune-lora" \
-  --push_to_hub
 
+python ../diffusers/examples/text_to_image/train_text_to_image_lora_sdxl.py \
+  --pretrained_model_name_or_path="runwayml/stable-diffusion-v1-5"  \
+  --dataset_name="./cartoon_dataset" \
+  --dataloader_num_workers=8 \
+  --resolution=512 \
+  --center_crop \
+  --random_flip \
+  --train_batch_size=1 \
+  --gradient_accumulation_steps=4 \
+  --max_train_steps=15000 \
+  --learning_rate=1e-04 \
+  --max_grad_norm=1 \
+  --lr_scheduler="cosine" \
+  --lr_warmup_steps=0 \
+  --output_dir="./fine-tune-lora" \
+  --hub_model_id="cartoon-new-lora" \
+  --checkpointing_steps=200 \
+  --validation_prompt="anime screencap, masterpiece, best quality, 1girl, aqua eyes, baseball cap, blonde hair, closed mouth, earrings, green background, hat, hoop earrings, jewelry, looking at viewer, shirt, short hair, simple background, solo, upper body, yellow shirt" \
+  --seed=1337
