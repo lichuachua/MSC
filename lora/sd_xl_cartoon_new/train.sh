@@ -18,6 +18,10 @@
 module load cuda
 nvidia-smi
 
+export TRANSFORMERS_CACHE="../../../MSC/sdxl_model"
+export HF_HOME="../../../MSC/sdxl_model"
+echo $TRANSFORMERS_CACHE
+echo $HF_HOME
 
 python ../diffusers/examples/text_to_image/train_text_to_image_lora_sdxl.py \
   --pretrained_model_name_or_path="stabilityai/stable-diffusion-xl-base-1.0"  \
