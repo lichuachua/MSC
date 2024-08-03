@@ -3,35 +3,46 @@ import torch
 import os
 
 prompts = [
-    "katou megumi, 1girl, solo, bangs, brown hair, hat, white headwear, dress, white background, looking at viewer, simple background, brown eyes, open mouth, short hair, ribbon, jacket, red jacket, black ribbon, blush, open clothes, smile, beret, salute, open jacket, arm behind back, collarbone, neck ribbon, long sleeves, :d, upper body, <lora:Misaki Kurehito_XL:0.8>",
-    "best quality,high resolution,distinct image,best quality,high resolution,distinct image,Original Characters,Natural Volumetric Lighting And Best Shadows,Deep Depth Of Field,Sharp Focus,Portrait Of Stunningly Beautiful Petite Girl,Soft Delicate Beautiful Attractive Face With Alluring Yellow Eyes,Lovely Small Breasts,Sharp Eyeliner,Seductive Smiling,Open Mouth With Cute Fangs Out,Windswept Disheveled Brown Hair,Thick Layered Medium Twintail Hairstyles,Blush Eyeshadow With Thick Eyelashes,Parted Lips,Applejack Hat,Oversized Pop-Art Jacket,Slim Waist With Open Cute Navel,Denim Jeans Pants With Buckle Belt,(Messy Painted Body:1.05),(Holding Spray Paint Can:1.1),(Graffiti Murals Wall Background:1.15),(Standing On Narrow City Streets Crossword:1.2),(Highest Quality, Amazing Details:1.4),Masterpiece,Bloom,Picturesque,Brilliant Colorful Paintings,masterpiece,Hd",
-    "science fiction,robot,solo,cable,mecha,no humans,humanoid robot,white background,standing,looking ahead,helmet,grey background,1other,wire,airport,cowboy_shot,eye-contact,depth of field,cinematic_angle,moody lighting,Cinematic Lighting,comic,8 Bit Game,illustration,highres,fantasy,ban,paleturquoise,lightgray,darkorange,orange",
-    "huowu,1girl, solo, black hair, long hair,white thighhighs, chair, high heels, cosplay,((upper body)),young and beautiful, tall and beautiful, fair face, perfect features, tall and beautiful, fair skin, good figure, 4k,cg,.holding fan, blue theme,gameCG background,3Drender,realistic,cinematic lighting,smooth fog,detailed face, <lora:chilloutmixss_xss10:0.1> <lora:japaneseDollLikeness_v10:0.3>light smile, (((The Architectural Background of Japanese Style))).",
-    "1girl, purple eyes, blush, long hair, twintails,  solo focus, brown hair, bow, bangs, hair between eyes, blue bow, nose blush,  light blush, :o, fang,  very long hair,  breasts,  blonde hair,  fangs,  outdoor, night, street, starry sky, bench, sitting., hooded jacket, casual,dark night ,night sky, arm hug, open jacket, pleated skirt",
-    "masterpiece, best quality, 1girl, smile, cat ears, long pink hair, arms behind back, close-up, bokeh, (blurry background:1.1),",
-    "masterpiece, best quality, 1girl, up-close, from side, hairclip, smile, white hair, red eyes, looking at viewer, blue eyes, hands in pockets, up close, wearing a yellow rain jacket and dark pants, rainy day, long hair, walking in a country road at sunset,",
-    "masterpiece, best quality, 1girl, up-close, from side, hairclip, smile, white hair, red eyes, looking at viewer, blue eyes, hands in pockets, up close, wearing a yellow rain jacket and dark pants, rainy day, long hair, walking in a country road at sunset,",
-    "masterpiece, best quality, detailed, 1girl, close up,curtained hair, blue eyes, brooch, laces, frilled sleeves, dress, village, bokeh, arms behind back,pastel colorstheme,",
-    "masterpiece,best quality,StyleD01,1girl, solo, purple eyes, dress, short sleeves, green hair, pantyhose, twintails, hair ornament, long hair, hair flower, looking at viewer, flower, sitting, blush, ribbon, puffy sleeves, bangs, couch, indoors, purple dress, puffy short sleeves, closed mouth, frills, hair ribbon, white pantyhose, wrist cuffs, black ribbon, frilled dress, hair between eyes, window, on couch, breasts, hair intakes, feet out of frame, neck ribbon, choker, bow",
-    "masterpiece,best quality,StyleD01,1girl, solo, thighhighs, long hair, flower, boots, breasts, hair ornament, looking at viewer, detached sleeves, hair flower, blush, torn clothes, white thighhighs, brown footwear, dress, cleavage, purple eyes, bangs, kneeling, hair between eyes, red flower, frills, all fours, petals, plant, medium breasts, white flower, closed mouth, bare shoulders, long sleeves, animal ears, outdoors, knee boots",
-    "best quality,best animated,masterpiece,ray tracing, global illumination,1girl, solo, breasts, long hair, underwear,school uniform, outdoors,"
+    "(((sitting, crossed legs))), ((Jeanne d'Arc Alter (Fate))), ((maid, maid apron, maid headdress)), best quality, looking at viewer, 1 girl, blonde hair, yellow eyes, high resolution, detailed, intricate, green background, close-up, open clothes, (beautiful face:1.15), anime style, soft lighting, indoor setting, Victorian window, (intricate details), (high quality), (illustration:1.1)",
+    "anime screencap, masterpiece, best quality, 1girl, aqua eyes, baseball cap, blonde hair, closed mouth, earrings, green background, hat, hoop earrings, jewelry, looking at viewer, shirt, short hair, simple background, solo, upper body, yellow shirt",
+    "solo,multicolored hair,one-hour drawing challenge,shirt,tears,hand up,thighs,cropped legs,kindergarten uniform,red eyes,blue skirt,between legs,dress shirt,kantai collection,ebifurya,looking at viewer,collared shirt,very long hair,matsuwa (kancolle),skirt,gradient hair,simple background,1girl,purple hair,sitting,white background,pleated skirt,long hair,blue shirt,name tag,white headwear,parted bangs,hand between legs,black hair,highres,blush",
+    "1girl, solo, smile, indoors, blue eyes, side ponytail, classroom, black hair, breasts, sweater, looking at viewer, desk, sleeveless sweater, school desk, ribbed sweater, grin, sleeveless turtleneck, turtleneck, bare shoulders, blush, long hair, chalkboard, chair, turtleneck sweater, bangs, medium breasts, bare arms, upper body, sitting, school chair, green background",
+    "mayuzumi fuyuko, 1 girl, arm support, bed sheet, black hair, black ribbon, black skirt, black thighhighs, blush, large breasts, long hair, long sleeves, looking at viewer, neck ribbon, pink shirt, ribbon, frilled shirt, sitting, skirt, smile, solo, suspender skirt, suspenders, white background, cinematic angle, cinematic lighting, anime coloring, detailed, masterpiece, best quality"
+]
+
+negative_prompts = [
+    "bad-artist-anime, bad-hands-5, bad-image-v2-39000, bad_prompt_version2, bad_quality, bad-image-9600, badtth115, negprompt5, NG_DeepNegative_V1_75T, rtfclprmt315, Unspeakable-Horrors-Composition-4v,((worst quality)), low quality, (((out of frame))), (((out of borders))), ((close up)),  ((disfigured)), ((bad art)), blurry foreground, (blurry:2.0), jpeg artifacts, signature, watermark, username, blurry, artist name,  text, JPEG artifacts, signature,watermark, extra digit, fewer digits, text, error, patreon username, text font ui,  (censored), mosaic censoring, bar censor, pointless censoring, horror, cropped, (((deformed))), ((extra limbs)), (((duplicate))), ((morbid)), ((mutilated)), ((poorly drawn hands)), ((poorly drawn face)), (((mutation))), ((ugly)),  ((bad anatomy)), (((bad proportions))), weird colors, gross proportions, (malformed limbs), ((missing arms)), ((missing legs)), (((extra arms))), (((extra legs))), mutated hands, (fused fingers), (too many fingers), (((long neck))), ((extra fingers)), missing fingers, ((mangled fingers)), glitchy,  (((((fused fingers))))), (((((too many fingers))))), (((unclear eyes))), (lowres), bad anatomy, cloned face, malformed hands, long neck, missing limb,  poorly drawn feet, disfigured, (mutated hand and finger: 1.5), (long body: 1.3), (mutation poorly drawn: 1.2), fused asshole, missing asshole, bad anus, bad pussy, bad crotch, bad crotch seam, fused anus, fused pussy, (more than 2 nipples), missing clit, bad clit, fused clit, worst face, Ugly Fingers, [thick lips], huge eyes,  multiple breasts, ((plump)),yaoi, furry, pubic hair, mosaic, (multiple moles),  ((pubic tattoo)), (deformed fingers:1.2), (long fingers:1.2), (interlocked fingers:1.2), forehead mark, facial mark, ((monochrome)),",
+    "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
+    "blurry, blur, watermark, logo, text, signature, nudity, nsfw, hands,",
+    "nsfw, lowres, (bad), text, error, fewer, extra, missing, worst quality, jpeg artifacts, low quality, watermark, unfinished, displeasing, oldest, early, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract]",
+    "nsfw, lowres, (bad), text, error, fewer, extra, missing, worst quality, jpeg artifacts, low quality, watermark, unfinished, displeasing, oldest, early, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract]"
 ]
 
 base_dir = "./fine-tune-lora"
 output_base_dir = "./output_file"
-
 end_output_dir = "./output_file/output_file_checkpoint-10000000"
 
 os.makedirs(end_output_dir, exist_ok=True)
 
-pipeline = AutoPipelineForText2Image.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0",
-                                                     torch_dtype=torch.float16).to("cuda")
-pipeline.load_lora_weights(base_dir, weight_name="pytorch_lora_weights.safetensors")
+try:
+    pipeline = AutoPipelineForText2Image.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0",
+                                                         torch_dtype=torch.float16).to("cuda")
+    pipeline.load_lora_weights(base_dir, weight_name="pytorch_lora_weights.safetensors")
+except HFValidationError as e:
+    print(f"Error loading pipeline or weights: {e}")
+    raise
 
-for i, prompt in enumerate(prompts):
-    print(f"Generating image for prompt {i + 1}")
-    image = pipeline(prompt).images[0]
-    image.save(os.path.join(end_output_dir, f"cartoon_{i + 1}.png"))
+for i, (prompt, n_prompt) in enumerate(zip(prompts, negative_prompts)):
+    output_file = os.path.join(end_output_dir, f"cartoon_{i + 1}.png")
+    if not os.path.exists(output_file):
+        try:
+            print(f"Generating image for prompt {i + 1}")
+            image = pipeline(prompt=prompt, negative_prompt=n_prompt).images[0]
+            image.save(output_file)
+        except Exception as e:
+            print(f"Error generating image for prompt {i + 1}: {e}")
+    else:
+        print(f"Image for prompt {i + 1} already exists, skipping.")
 
 checkpoints = [f for f in os.listdir(base_dir)
                if os.path.isdir(os.path.join(base_dir, f)) and f.startswith('checkpoint')]
@@ -42,14 +53,25 @@ for checkpoint in checkpoints:
 
     os.makedirs(output_dir, exist_ok=True)
 
-    print(f"Processing checkpoint: {checkpoint}")
-    pipeline = AutoPipelineForText2Image.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0",
-                                                         torch_dtype=torch.float16).to("cuda")
-    pipeline.load_lora_weights(checkpoint_path, weight_name="pytorch_lora_weights.safetensors")
+    try:
+        print(f"Processing checkpoint: {checkpoint}")
+        pipeline = AutoPipelineForText2Image.from_pretrained("runwayml/stable-diffusion-v1-5",
+                                                             torch_dtype=torch.float16).to("cuda")
+        pipeline.load_lora_weights(checkpoint_path, weight_name="pytorch_lora_weights.safetensors")
+    except HFValidationError as e:
+        print(f"Error loading pipeline or weights for checkpoint {checkpoint}: {e}")
+        continue
 
-    for i, prompt in enumerate(prompts):
-        print(f"Generating image for prompt {i + 1} using checkpoint {checkpoint}")
-        image = pipeline(prompt).images[0]
-        image.save(os.path.join(output_dir, f"cartoon_{i + 1}.png"))
+    for i, (prompt, n_prompt) in enumerate(zip(prompts, negative_prompts)):
+        output_file = os.path.join(output_dir, f"cartoon_{i + 1}.png")
+        if not os.path.exists(output_file):
+            try:
+                print(f"Generating image for prompt {i + 1} using checkpoint {checkpoint}")
+                image = pipeline(prompt=prompt, negative_prompt=n_prompt).images[0]
+                image.save(output_file)
+            except Exception as e:
+                print(f"Error generating image for prompt {i + 1} using checkpoint {checkpoint}: {e}")
+        else:
+            print(f"Image for prompt {i + 1} using checkpoint {checkpoint} already exists, skipping.")
 
 print("All images generated and saved.")
