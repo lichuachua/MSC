@@ -32,7 +32,8 @@
 
 ### Prepare
 
-1. Enter the dreambooth folder, Download and install the diffusers package - run 'git clone https://github.com/huggingface/diffusers'
+1. Enter the dreambooth folder, Download and install the diffusers package - run 'git
+   clone https://github.com/huggingface/diffusers'
 2. Run 'cd diffusers'
 3. Run 'pip install .'
 4. Run 'cd examples/dreambooth'
@@ -64,11 +65,33 @@
     - generate.py - Source file for generate images
     - generate.sh - Footstep file for generate images
 
+- cartoon
+    - cartoon_dataset - fine-tuning the dataset used lora about cartoon 800 image
+    - train.sh - Script for training the model
+    - fine-tune-lora - a new model after fine-tuning
+    - generate.py - Source file for generate images
+    - generate.sh - Footstep file for generate images
+
+- cartoon_new
+    - cartoon_dataset - fine-tuning the dataset used lora about cartoon 80 high-qulity image
+    - train.sh - Script for training the model
+    - fine-tune-lora - a new model after fine-tuning
+    - generate.py - Source file for generate images
+    - generate.sh - Footstep file for generate images
+
+- sd_xl_cartoon_new
+    - cartoon_dataset - fine-tuning the dataset used lora and stable_diffusion_xl about cartoon 80 high-qulity image
+    - train.sh - Script for training the model
+    - fine-tune-lora - a new model after fine-tuning
+    - generate.py - Source file for generate images
+    - generate.sh - Footstep file for generate images
+
 ## Running steps
 
 ### Prepare
 
-1. Enter the lora folder, Download and install the diffusers package - run 'git clone https://github.com/huggingface/diffusers'
+1. Enter the lora folder, Download and install the diffusers package - run 'git
+   clone https://github.com/huggingface/diffusers'
 2. Run 'cd diffusers'
 3. Run 'pip install .'
 4. Run 'cd examples/text_to_image'
@@ -81,14 +104,31 @@
    below：
    ![img](https://github.com/user-attachments/assets/c9c67f19-70ba-41d5-ab10-10644948b280)
 
-
 ### Generate
 
 7. Task completed, run 'qsub generate.sh' in the current folder
 
+# 4. Tool
 
-# Explanation
-## Image marking tool
-- waifu-diffusion-v1-4 https://huggingface.co/hakurei/waifu-diffusion-v1-4
+## Annotation
+
+### address: tools/tag-generate.ipynb
+
 - DeepDanbooru https://huggingface.co/skytnt/deepdanbooru_onnx
 - BLIP
+
+### address: https://github.com/lichuachua/wd14-tag
+
+- WD14
+
+# 5. Clip-score
+
+## address: tools/clip-score.py
+
+# 5. Questionnaire
+
+## address: tools/questionnaire.ipynb
+
+# 6. Report Images Generate
+
+## address: tools/cartoon-new-generate.ipynb
