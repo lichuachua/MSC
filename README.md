@@ -114,7 +114,7 @@
 
 ### address: tools/tag-generate.ipynb
 
-- DeepDanbooru https://huggingface.co/skytnt/deepdanbooru_onnx
+- DeepDanbooru
 - BLIP
 
 ### address: https://github.com/lichuachua/wd14-tag
